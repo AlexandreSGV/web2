@@ -22,6 +22,6 @@ public class DAOFactory {
 	public static TipoItemDAO criarTipoItemDAO() {
 		TipoItemDAO tipoItemDAO = new TipoItemDAO();
 		tipoItemDAO.setSession(HibernateUtil.getSessionFactory().getCurrentSession());
-		return null;
+		return tipoItemDAO;
 	}
 }

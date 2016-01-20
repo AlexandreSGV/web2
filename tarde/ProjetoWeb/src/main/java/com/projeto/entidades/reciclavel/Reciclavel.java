@@ -27,11 +27,13 @@ public class Reciclavel {
 	public Reciclavel() {
 		super();
 		this.usuario = new Usuario();
+		this.tipoItem = new TipoItem(); 
 	}
 
-	public Reciclavel(Usuario usuario, String nome, int quantidade) {
+	public Reciclavel(Usuario usuario, TipoItem tipoItem, String nome, int quantidade) {
 		super();
 		this.usuario = usuario;
+		this.tipoItem = tipoItem;
 		this.nome = nome;
 		this.quantidade = quantidade;
 	}
@@ -50,6 +52,14 @@ public class Reciclavel {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+
+	public TipoItem getTipoItem() {
+		return tipoItem;
+	}
+
+	public void setTipoItem(TipoItem tipoItem) {
+		this.tipoItem = tipoItem;
 	}
 
 	public String getNome() {
@@ -75,6 +85,7 @@ public class Reciclavel {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + quantidade;
+		result = prime * result + ((tipoItem == null) ? 0 : tipoItem.hashCode());
 		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
 		return result;
 	}
@@ -100,6 +111,11 @@ public class Reciclavel {
 			return false;
 		if (quantidade != other.quantidade)
 			return false;
+		if (tipoItem == null) {
+			if (other.tipoItem != null)
+				return false;
+		} else if (!tipoItem.equals(other.tipoItem))
+			return false;
 		if (usuario == null) {
 			if (other.usuario != null)
 				return false;
@@ -107,5 +123,7 @@ public class Reciclavel {
 			return false;
 		return true;
 	}
+
+	
 
 }

@@ -30,6 +30,7 @@ public class ReciclavelMB {
 	public String salvar(){
 		ReciclavelRN reciclavelRN = new ReciclavelRN();
 		reciclavelRN.salvar(this.reciclavel);
+		lista = null;
 		return destinoSalvar;
 	}
 	public String novo() {

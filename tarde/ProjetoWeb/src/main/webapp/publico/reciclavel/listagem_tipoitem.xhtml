@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Financeiro</title>
+</h:head>
+<h:body>
+	<h1>Financeiro</h1>
+	<h:form>
+	<p:dataTable var="ite" value="#{tipoItemMB.lista}" sortMode="multiple">
+        <f:facet name="header">
+            Lista de itens reciclaveis
+        </f:facet>
+        <p:column headerText="Id" sortBy="#{ite.id}">
+            <h:outputText value="#{ite.id}" />
+        </p:column>
+ 
+        <p:column headerText="Nome" sortBy="#{ite.nome}">
+            <h:outputText value="#{ite.nome}" />
+        </p:column>
+ 
+        <p:column headerText="Descrição" sortBy="#{ite.descricao}">
+            <h:outputText value="#{ite.descricao}" />
+        </p:column>
+ 		<p:column headerText="Icone" sortBy="#{ite.icone}">
+            <h:outputText value="#{ite.icone}" />
+        </p:column>
+   
+    </p:dataTable>
+    </h:form>
+</h:body>
+</html>

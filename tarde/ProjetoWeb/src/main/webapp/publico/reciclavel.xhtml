@@ -21,6 +21,11 @@
 				required="true">
 				<f:validateLength minimum="3" maximum="30" />
 			</p:inputText>
+			
+			<p:outputLabel value="Tipo:" for="tipo" />
+			<p:selectOneMenu id="tipo" value="#{reciclavelMB.reciclavel.tipoItem.id}">
+				<f:selectItems value="#{tipoItemMB.lista}" var="ite" itemLabel="#{ite.nome}" itemValue="#{ite.id}" />
+			</p:selectOneMenu>
 
 			<p:outputLabel value="Quantidade:" for="quantidade" />
 			<p:inputText id="quantidade" label="Quantidade"

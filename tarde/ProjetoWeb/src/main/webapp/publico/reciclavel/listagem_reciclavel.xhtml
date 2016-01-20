@@ -27,6 +27,12 @@
  		<p:column headerText="Usuario" sortBy="#{rec.usuario.nome}">
             <h:outputText value="#{rec.usuario.nome}" />
         </p:column>
+        
+        <p:column headerText="Tipo" sortBy="#{rec.tipoItem.nome}">
+            <h:outputText value="#{rec.tipoItem.nome}" id="tp"/>
+            <p:tooltip id="toolTipGrow" for="tp" value="#{rec.tipoItem.descricao}"
+               showEffect="clip" hideEffect="explode" />
+        </p:column>
    
     </p:dataTable>
     </h:form>
