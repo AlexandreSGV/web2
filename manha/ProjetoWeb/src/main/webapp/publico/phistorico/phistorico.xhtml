@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Cadastro de Usuários</title>
+</h:head>
+<h:body>
+	<h1>Cadastro de Ponto Histórico</h1>
+	<h:form id="cadastro">
+		<p:messages id="messages" autoUpdate="true" />
+
+
+		<h:panelGrid columns="2" id="matchGrid" cellpadding="5">
+			<p:outputLabel value="Nome:" for="nome" />
+			<p:inputText id="nome" label="Nome"
+				value="#{pontoHistoricoMB.pHistorico.nome}" size="30" maxlength="30"
+				required="true" requiredMessage="Digite um nome">
+				<f:validateLength minimum="10" maximum="30" />
+			</p:inputText>
+
+
+			<p:outputLabel value="Status:" for="status" />
+			<p:selectOneMenu id="status"
+				value="#{pontoHistoricoMB.pHistorico.status}">
+				<f:selectItem itemValue="open" itemLabel="Aberto" />
+				<f:selectItem itemValue="close" itemLabel="Fechado" />
+			</p:selectOneMenu>
+
+			<p:outputLabel value="Gestor:" for="gestor" />
+			<p:selectOneMenu id="gestor"
+				value="#{pontoHistoricoMB.pHistorico.gestor.id}">
+				<f:selectItems value="#{usuarioMB.lista}" var="usr" itemValue="#{usr.id}" itemLabel="#{usr.nome}"/>
+			</p:selectOneMenu>
+			<p:outputLabel value="Endereco:" for="endereco" />
+			<p:inputText id="endereco" label="endereco"
+				value="#{pontoHistoricoMB.pHistorico.endereco}" size="60"
+				maxlength="100" required="true" requiredMessage="Digite um endereco">
+				<f:validateLength minimum="3" maximum="100" />
+			</p:inputText>
+
+		</h:panelGrid>
+
+		<p:commandButton action="#{pontoHistoricoMB.salvar()}" value="Salvar" />
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Ponto Histórico</title>
+</h:head>
+<h:body>
+	<h1>Ponto Histórico</h1>
+	<h:form>
+	<p:dataTable var="ph" value="#{pontoHistoricoMB.lista}" sortMode="multiple">
+        <f:facet name="header">
+            Lista de Ponto Histórico 
+        </f:facet>
+        <p:column headerText="Id" sortBy="#{ph.id}">
+            <h:outputText value="#{ph.id}" />
+        </p:column>
+ 
+        <p:column headerText="Nome" sortBy="#{ph.nome}">
+            <h:outputText value="#{ph.nome}" />
+        </p:column>
+ 
+        <p:column headerText="Endereço" sortBy="#{ph.endereco}">
+            <h:outputText value="#{ph.endereco}" />
+        </p:column>
+ 		<p:column headerText="Status" sortBy="#{ph.status}">
+            <h:outputText value="#{ph.status}" />
+        </p:column>
+   
+    </p:dataTable>
+    </h:form>
+</h:body>
+</html>

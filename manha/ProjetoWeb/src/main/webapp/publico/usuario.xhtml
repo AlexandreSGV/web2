@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Cadastro de Usuários</title>
+</h:head>
+<h:body>
+	<h1>Cadastro de Usuários</h1>
+	<h:form id="cadastro">
+		<p:messages id="messages" autoUpdate="true" />
+		<h:inputHidden value="#{usuarioMB.usuario.id}" />
+		<h:inputHidden value="#{usuarioMB.usuario.ativo}" />
+		<h:inputHidden value="#{usuarioMB.destinoSalvar}"/>
+
+		<h:panelGrid columns="2" id="matchGrid" cellpadding="5"> 
+			<p:outputLabel value="Nome:" for="nome" />
+			<p:inputText id="nome" label="Nome" value="#{usuarioMB.usuario.nome}"
+				size="30" maxlength="30" required="true"
+				requiredMessage="Você não tem nome?" >
+				<f:validateLength minimum="10" maximum="30" />
+			</p:inputText>
+
+			<p:outputLabel for="data" value="Data Nascimento:" />
+			<p:calendar id="data" value="#{usuarioMB.usuario.nascimento}"
+				showOn="button" required="true" size="10" maxlength="10" />
+
+
+			<p:outputLabel value="Celular:" for="celular" />
+			<p:inputText id="celular" label="Celular"
+				value="#{usuarioMB.usuario.celular}" size="10" />
+
+			<p:outputLabel value="e-Mail:" for="email" />
+			<h:panelGroup>
+				<p:inputText id="email" label="e-Mail"
+					value="#{usuarioMB.usuario.email}" size="50" maxlength="50"
+					required="true" validatorMessage="e-mail inválido">
+					<f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+" />
+				</p:inputText>
+				<p:message for="email" />
+			</h:panelGroup>
+
+			<p:outputLabel value="Idioma:" for="idioma" />
+			<p:selectOneMenu id="idioma" value="#{usuarioMB.usuario.idioma}">
+				<f:selectItem itemValue="pt_BR" itemLabel="Português" />
+				<f:selectItem itemValue="en_US" itemLabel="English" />
+				<f:selectItem itemValue="es_ES" itemLabel="Espanol" />
+			</p:selectOneMenu>
+			<p:outputLabel value="Login:" for="login" />
+			<p:inputText id="login" label="Login"
+				value="#{usuarioMB.usuario.login}" size="15" maxlength="15"
+				required="true"
+				validatorMessage="Login deve ter no mínimo 5 e no máximo 15 caracteres e só pode ter os símbolos '.' e '_'.">
+				<f:validateRegex pattern="([a-z]|[0-9]|[.]|[_]){5,15}" />
+			</p:inputText>
+
+		
+		<p:spacer height="10" />
+ 
+    	<p:separator />           
+        <h:outputLabel for="senha" value="Senha:" />
+        <p:password id="senha" value="#{usuarioMB.usuario.senha}" match="confirmarsenha" label="Senha" required="true" validatorMessage="Senha não confere"/>
+ 
+        <h:outputLabel for="confirmarsenha" value="Confirmar Senha:" />
+        <p:password id="confirmarsenha" value="#{usuarioMB.confirmarSenha}" label="Confirmar Senha" required="true" />
+    </h:panelGrid>
+ 
+		
+		<p:commandButton action="#{usuarioMB.salvar()}" value="Salvar" />
+	</h:form>
+</h:body>
+</html>
