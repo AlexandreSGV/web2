@@ -9,7 +9,7 @@
 <h:body>
 	<h1>Financeiro</h1>
 	<h:form>
-	<p:dataTable var="rec" value="#{reciclavelMB.lista}" sortMode="multiple">
+	<p:dataTable  var="rec" value="#{reciclavelMB.lista}" sortMode="multiple">
         <f:facet name="header">
             Lista de Reciclaveis
         </f:facet>
@@ -24,7 +24,7 @@
         <p:column headerText="Quantidade" sortBy="#{rec.quantidade}">
             <h:outputText value="#{rec.quantidade}" />
         </p:column>
- 		<p:column headerText="Usuario" sortBy="#{rec.usuario.nome}">
+ 		<p:column headerText="Disponibilizador" sortBy="#{rec.usuario.nome}">
             <h:outputText value="#{rec.usuario.nome}" />
         </p:column>
         
@@ -33,7 +33,13 @@
             <p:tooltip id="toolTipGrow" for="tp" value="#{rec.tipoItem.descricao}"
                showEffect="clip" hideEffect="explode" />
         </p:column>
-   
+   <p:column >
+            <h:commandButton action="#{reciclavelMB.excluir}" image="/resources/images/excluir16.png" > 
+            <f:setPropertyActionListener value="#{rec}" target="#{reciclavelMB.reciclavel}" />
+            </h:commandButton>
+            
+        </p:column>
+        
     </p:dataTable>
     </h:form>
 </h:body>

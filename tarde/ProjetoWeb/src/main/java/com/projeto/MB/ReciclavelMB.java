@@ -14,7 +14,7 @@ import com.projeto.entidades.usuario.UsuarioRN;
 @RequestScoped
 public class ReciclavelMB {
 
-	private Reciclavel reciclavel;
+	private Reciclavel reciclavel= new Reciclavel();
 	private String destinoSalvar;
     private List<Reciclavel> lista;
     private List<Usuario> listaUsuarios;
@@ -33,12 +33,24 @@ public class ReciclavelMB {
 		lista = null;
 		return destinoSalvar;
 	}
+	public String excluir() {
+		ReciclavelRN reciclavelRN = new ReciclavelRN();
+		reciclavelRN.excluir(this.reciclavel);
+		this.lista = null;
+		return "";
+	}
+	
 	public String novo() {
 		this.reciclavel = new Reciclavel();
 		this.destinoSalvar = "/publico/reciclavel/listagem_reciclavel";
 		return "/publico/reciclavel";
 	}
-	
+	public String redirecionaListagem() {
+		this.reciclavel = new Reciclavel();
+		this.lista = null;
+		this.destinoSalvar = "";
+		return "/publico/reciclavel/listagem_reciclavel";
+	}
 	
 	
 	public List<Reciclavel> getLista() {
