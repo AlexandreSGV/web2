@@ -25,7 +25,7 @@
 	</filter-mapping>
 	
 	
-	<welcome-file-list>
-		<welcome-file>index.jsf</welcome-file>
-	</welcome-file-list>
+		<welcome-file-list>
+			<welcome-file>index.jsf</welcome-file>
+		</welcome-file-list>
 </web-app>

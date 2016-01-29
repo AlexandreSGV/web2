@@ -1,0 +1,133 @@
+html, body{
+    height: 100%;
+    margin: 0px;
+}
+
+header, #header{
+    height: 40%; 
+    width: 100%;    
+    background-image: url(../resources/images/plano.jpg);
+    background-size: 100% 100%;
+}
+
+nav, #nav{
+    height: 5%;
+    width: 70%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    background-color: chocolate;
+    padding-left: 15%;
+    padding-right: 15%;
+    vertical-align: middle;
+}
+
+
+ul{
+    margin: 0px;
+    width: 85%;
+    display: table;
+}
+li{
+    display: table-cell;
+}
+
+section, aside, article, #section, #aside, #article{ 
+    float: left;
+    width: 100%;
+}
+
+section, #section{
+    height: auto;
+    width: 68%;
+    margin-left: 2%;
+    background-color: aliceblue;
+    background-size: 100% 100%;
+}
+
+
+aside, #aside{
+    height: 30%;
+    width: 27%; 
+    margin-left: 1%;
+    margin-right: 2%;
+    background-color: aliceblue;
+}
+
+article, #article{
+    height: 30%;
+    width: 27%; 
+    margin-left: 1%;
+    margin-right: 2%;
+    margin-top: 10px;
+    background-color: aliceblue;
+}
+
+form{
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+.img{
+    height: 18%;
+    width: 25%;
+    float: left;
+    padding: 10px;
+}
+.drop{
+    height: 30%;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.sep{
+    height: 30%;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+}
+.alo{
+    text-align: center;
+}
+a, li{
+    color: black;
+     font-weight: bold;
+    font-size: 18px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.input{
+    width: 99%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+button{
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+select{
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
+
+h4, h3, h2, h1{
+    font-family: Arial,sans-serif,monospace;
+    text-align: justify;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+
+

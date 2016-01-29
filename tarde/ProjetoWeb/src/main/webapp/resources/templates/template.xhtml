@@ -6,32 +6,69 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title><ui:insert name="title">Título padrão</ui:insert></title>
-	<link rel="stylesheet" type="text/css" href="resources/css/estilo.css"/>
+	<h:outputStylesheet library="css" name="estilo1.css"  />
 </h:head>
 <h:body>
-    <div id="header">Aqui é o cabeçalho</div>
+
+    <div id="header"></div>
     
-	<div id="menu">
+  <div id="nav"><ui:insert name="nav"> </ui:insert>
+        
+     <ul>   
+	<li> <h:form>
+	<li>	<h:commandLink action="/index">Home</h:commandLink></li>
+	<li>	<h:commandLink action="#{usuarioMB.novo}">Novo usuário</h:commandLink></li>
+	<li>	<h:commandLink action="#{reciclavelMB.novo}">Novo reciclável</h:commandLink></li>
+	<li>	<h:commandLink action="#{tipoItemMB.novo}">Novo Tipo Item</h:commandLink></li>
+	<li>	<h:commandLink action="#{reciclavelMB.redirecionaListagem}">Lista de Reciclavel</h:commandLink></li>
+	<li>	<h:commandLink action="/publico/reciclavel/listagem_tipoitem">Lista de Tipos</h:commandLink></li>
+	</h:form></li>
+	</ul>
 	
-	<h:form>
-		<h:commandLink action="#{usuarioMB.novo}">Novo usuário</h:commandLink>
-	</h:form>
-	<h:form>
-		<h:commandLink action="#{reciclavelMB.novo}">Novo reciclável</h:commandLink>
-	</h:form>
-	<h:form>
-		<h:commandLink action="#{tipoItemMB.novo}">Novo Tipo Item</h:commandLink>
-	</h:form>
-	<h:form>
-		<h:commandLink action="#{reciclavelMB.redirecionaListagem}">Lista de Reciclavel</h:commandLink>
-	</h:form>
-	<h:form>
-		<h:commandLink action="/publico/reciclavel/listagem_tipoitem">Lista de Tipos</h:commandLink>
-	</h:form>
+    
+    </div>
+    
+    <div id="section"><ui:insert name="section"></ui:insert></div>
+    
+    
+    <div id="aside">
+    
+     <form >
+    <label for="inputEmail3" >Email</label>
+    <input type=" " class="input" id="inputEmail3" placeholder="Email"></input>
+ 
+      
+    <label for="inputPassword3" >Senha</label>
+    <input type="password" class="input" id="inputPassword3" placeholder="Password"></input>
+ 
+  
+ 
+    </form>
+    
+  
+      <button type="submit">Entrar</button>
+   
+    
+    </div>
 	
-	</div>
-	<div id="section"><ui:insert name="section"></ui:insert></div>
 	
-	<div id="rodape">todos os direitos reservados</div>
+	<div id="article">
+    
+    
+    <label>Selecione sua necessidade</label>
+    <select class="form-control">
+  <option>Catador</option>
+  <option>Reciclador</option>
+</select>    
+    <button type="submit" >Entrar</button>
+    
+   
+    
+    
+    </div>
+    
+	
+	
+	
 	</h:body>
 </html>
