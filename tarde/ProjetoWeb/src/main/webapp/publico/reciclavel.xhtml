@@ -1,44 +1,48 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition template="/resources/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-<h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Cadastro de Reciclável</title>
-</h:head>
-<h:body>
-	<h1>Cadastro de Recicláveis</h1>
-	<h:form id="cadastro">
-	<h:inputHidden value="#{reciclavelMB.destinoSalvar}"/>
-		<p:messages id="messages" autoUpdate="true" />
 
-		<h:panelGrid columns="2" id="matchGrid" cellpadding="5">
-			<p:outputLabel value="Nome:" for="nome" />
-			<p:inputText id="nome" label="Nome"
-				value="#{reciclavelMB.reciclavel.nome}" size="30" maxlength="30"
-				required="true">
-				<f:validateLength minimum="3" maximum="30" />
-			</p:inputText>
-			
-			<p:outputLabel value="Tipo:" for="tipo" />
-			<p:selectOneMenu id="tipo" value="#{reciclavelMB.reciclavel.tipoItem.id}">
-				<f:selectItems value="#{tipoItemMB.lista}" var="ite" itemLabel="#{ite.nome}" itemValue="#{ite.id}" />
-			</p:selectOneMenu>
 
-			<p:outputLabel value="Quantidade:" for="quantidade" />
-			<p:inputText id="quantidade" label="Quantidade"
-				value="#{reciclavelMB.reciclavel.quantidade}" size="10" />
-				
+	<ui:define name="title">Cadastro de Recicláveis</ui:define>
+	<ui:define name="section">
+		<h1>Cadastro de Recicláveis</h1>
+		<h:form id="cadastro">
+			<h:inputHidden value="#{reciclavelMB.destinoSalvar}" />
+			<p:messages id="messages" autoUpdate="true" />
+
+			<h:panelGrid columns="2" id="matchGrid" cellpadding="5">
+				<p:outputLabel value="Nome:" for="nome" />
+				<p:inputText id="nome" label="Nome"
+					value="#{reciclavelMB.reciclavel.nome}" size="30" maxlength="30"
+					required="true">
+					<f:validateLength minimum="3" maximum="30" />
+				</p:inputText>
+
+				<p:outputLabel value="Tipo:" for="tipo" />
+				<p:selectOneMenu id="tipo"
+					value="#{reciclavelMB.reciclavel.tipoItem.id}">
+					<f:selectItems value="#{tipoItemMB.lista}" var="ite"
+						itemLabel="#{ite.nome}" itemValue="#{ite.id}" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Quantidade:" for="quantidade" />
+				<p:inputText id="quantidade" label="Quantidade"
+					value="#{reciclavelMB.reciclavel.quantidade}" size="10" />
+
 				<p:outputLabel value="Usuario:" for="usuario" />
-			<p:selectOneMenu id="usuario" value="#{reciclavelMB.reciclavel.usuario.id}">
-				<f:selectItems value="#{reciclavelMB.listaUsuarios}" var="usr" itemLabel="#{usr.nome}" itemValue="#{usr.id}" />
-				
-			</p:selectOneMenu>
-		</h:panelGrid>
+				<p:selectOneMenu id="usuario"
+					value="#{reciclavelMB.reciclavel.usuario.id}">
+					<f:selectItems value="#{reciclavelMB.listaUsuarios}" var="usr"
+						itemLabel="#{usr.nome}" itemValue="#{usr.id}" />
 
-		<p:commandButton action="#{reciclavelMB.salvar()}" value="Salvar" />
-	</h:form>
-</h:body>
-</html>
+				</p:selectOneMenu>
+			</h:panelGrid>
+
+			<p:commandButton action="#{reciclavelMB.salvar()}" value="Salvar" />
+		</h:form>
+	</ui:define>
+</ui:composition>

@@ -1,13 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition template="/resources/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-<h:head>
-	<title>Financeiro</title>
-</h:head>
-<h:body>
-	<h1>Financeiro</h1>
+
+
+	<ui:define name="title">Lista de Reciláveis</ui:define>
+	<ui:define name="section">
 	<h:form>
 	<p:dataTable var="ite" value="#{tipoItemMB.lista}" sortMode="multiple">
         <f:facet name="header">
@@ -30,5 +31,5 @@
    
     </p:dataTable>
     </h:form>
-</h:body>
-</html>
+</ui:define>
+</ui:composition>

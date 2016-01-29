@@ -1,23 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition template="/resources/templates/template.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
-	<title>Financeiro</title>
-</h:head>
-<h:body>
-	<h1>Financeiro</h1>
-	<h:form>
-		<h:commandLink action="#{usuarioMB.novo}">Novo usuário</h:commandLink>
-	</h:form>
-	<h:form>
-		<h:commandLink action="#{reciclavelMB.novo}">Novo reciclável</h:commandLink>
-	</h:form>
-	<h:form>
-		<h:commandLink action="#{tipoItemMB.novo}">Novo Tipo Item</h:commandLink>
-	</h:form>
-	<h:form>
-		<h:commandLink action="#{reciclavelMB.redirecionaListagem}">Lista de Reciclavel</h:commandLink>
-	</h:form>
-	</h:body>
-</html>
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:define name="title">Home</ui:define>
+
+<ui:define name="section">Esta é a minha home</ui:define>
+
+
+
+	
+</ui:composition>
