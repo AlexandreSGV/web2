@@ -1,0 +1,33 @@
+body, html{
+	height: 100%;
+	margin: 0px;
+}
+h1{
+	margin: 0px;
+}
+#header{
+	text-align: center;
+	width: 100%;
+	height: 20%;
+	background-color: #ff00ff;
+}
+#menu{
+	background-color: #ff80c0;
+	width: 100%;
+	height: 20%;
+	padding: 10px;
+}
+#section{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #e9ccf2;
+	width: 100%;
+	height: auto;
+	padding-left: 15%;
+}
+#rodape{
+	background-color: #7d007d;
+	width: 100%;
+	height: 5%;
+	padding: 10px;
+}

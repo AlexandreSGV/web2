@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title><ui:insert name="title">Título padrão</ui:insert></title>
+	<link rel="stylesheet" type="text/css" href="resources/css/estilo.css"/>
+</h:head>
+<h:body>
+    <div id="header">Aqui é o cabeçalho</div>
+    
+	<div id="menu">
+	
+	<h:form>
+		<h:commandLink action="#{usuarioMB.novo}">Novo usuário</h:commandLink>
+	</h:form>
+	<h:form>
+		<h:commandLink action="#{reciclavelMB.novo}">Novo reciclável</h:commandLink>
+	</h:form>
+	<h:form>
+		<h:commandLink action="#{tipoItemMB.novo}">Novo Tipo Item</h:commandLink>
+	</h:form>
+	<h:form>
+		<h:commandLink action="#{reciclavelMB.redirecionaListagem}">Lista de Reciclavel</h:commandLink>
+	</h:form>
+	<h:form>
+		<h:commandLink action="/publico/reciclavel/listagem_tipoitem">Lista de Tipos</h:commandLink>
+	</h:form>
+	
+	</div>
+	<div id="section"><ui:insert name="section"></ui:insert></div>
+	
+	<div id="rodape">todos os direitos reservados</div>
+	</h:body>
+</html>
